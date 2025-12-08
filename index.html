@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Calendario Económico Investing</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #0f1720;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+    }
+    .wrap {
+      width: 100%;
+      max-width: 900px;
+      padding: 12px;
+      box-sizing: border-box;
+    }
+    iframe {
+      width: 100%;
+      height: 700px;
+      border: 0;
+      display: block;
+      background: white;
+    }
+    .note {
+      margin-top: 8px;
+      font-size: 12px;
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <iframe
+      src="https://sslecal2.investing.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&importance=2,3&features=datepicker,timezone&countries=5&calType=week&timeZone=40&lang=49"
+      loading="lazy"
+      title="Calendario Económico Investing"
+      sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
+    ></iframe>
+
+    <div class="note">
+      Calendario económico en vivo cortesía de Investing.com
+    </div>
+  </div>
+</body>
+</html>
