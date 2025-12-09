@@ -3,44 +3,46 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Economic Calendar Clean</title>
+  <title>Investing.com Economic Calendar</title>
 
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      background: #ffffff;
+      background: #000;
+      height: 100%;
+      width: 100%;
       overflow: hidden;
     }
 
-    /* Envuelve todo exactamente al tamaño */
-    .container {
+    /* Contenedor sin bordes negros y sin padding */
+    .frameWrapper {
       width: 100vw;
       height: 100vh;
       overflow: hidden;
       display: flex;
-      align-items: flex-start; /* <-- Esto evita espacio arriba */
-      justify-content: center;
+      align-items: stretch;
+      justify-content: stretch;
+      background: #000;
     }
 
-    /* Hacemos zoom para eliminar bordes blancos */
     iframe {
-      width: 1200px;
-      height: 1800px;
+      width: 100%;
+      height: 100%;
       border: none;
-      transform: scale(1.35);      /* <-- Aumenta tamaño visible */
-      transform-origin: top center; /* <-- Importantísimo */
+      background: #ffffff; /* evita bordes negros */
+      transform-origin: top left;
     }
   </style>
 </head>
+
 <body>
-
-  <div class="container">
-    <iframe 
-      src="https://www.forexfactory.com/calendar?day=today"
-      loading="eager">
-    </iframe>
+  <div class="frameWrapper">
+    <iframe
+      src="https://sslecal2.investing.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&importance=2,3&features=datepicker,timezone&countries=5&calType=week&timeZone=40&lang=49"
+      loading="lazy"
+      sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+    ></iframe>
   </div>
-
 </body>
 </html>
