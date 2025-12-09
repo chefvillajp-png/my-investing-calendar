@@ -3,32 +3,47 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Investing Calendar Full Width</title>
+  <title>Calendario Económico Diario</title>
 
   <style>
-    html, body {
+    body {
       margin: 0;
       padding: 0;
-      background: #ffffff; /* blanco puro — no negro */
-      overflow: hidden;
-      width: 100%;
-      height: 100%;
+      background: #000;         /* Fondo negro para screenshot limpio */
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .wrap {
+      width: 540px;             /* ANCHO EXACTO DEL CALENDARIO */
+      padding: 0;
+      margin: 0;
     }
 
     iframe {
-      width: 100vw;      /* TODO el ancho real de la ventana */
-      height: 100vh;     /* TODO el alto real de la ventana */
+      width: 540px;             /* Coincide con wrap */
+      height: 950px;            /* Altura suficiente para el calendario diario */
       border: 0;
-      display: block;    /* elimina espacios invisibles */
+      display: block;
+    }
+
+    .note {
+      display: none;            /* Oculto para que no salga en el screenshot */
     }
   </style>
-</head>
 
+</head>
 <body>
-  <iframe
-    src="https://sslecal2.investing.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&importance=2,3&features=datepicker,timezone&countries=5&calType=week&timeZone=40&lang=49"
-    loading="eager"
-    sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-  ></iframe>
+
+  <div class="wrap">
+    <iframe
+      src="https://sslecal2.investing.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&importance=2,3&features=datepicker,timezone&countries=5&calType=day&timeZone=40&lang=49"
+      loading="lazy"
+      title="Calendario Económico Diario"
+      sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
+    ></iframe>
+  </div>
+
 </body>
 </html>
